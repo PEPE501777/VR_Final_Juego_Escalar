@@ -9,7 +9,7 @@ public class Final_Check : MonoBehaviour
 
     public void Win()
     {
-
+        print("waaaaaaaaaaaa");
     }
 
 
