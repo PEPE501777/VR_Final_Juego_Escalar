@@ -16,6 +16,7 @@ public class Timer : MonoBehaviour
     public GameObject spawn1;
     public GameObject door;
     public bool juego;
+    public End_Game ending;
 
 
     public void StarGame()
@@ -33,6 +34,7 @@ public class Timer : MonoBehaviour
     {
         juego = false;
         spawn1.SetActive(false);
+        ending.End_Game_Func();
 
 
     }

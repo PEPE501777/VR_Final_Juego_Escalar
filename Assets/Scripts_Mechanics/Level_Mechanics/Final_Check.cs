@@ -6,10 +6,11 @@ public class Final_Check : MonoBehaviour
     public Object_Found ref2;
     public Object_Found ref3;
     public Object_Found ref4;
+    public Win_Game win;
 
     public void Win()
     {
-        print("waaaaaaaaaaaa");
+        win.Win_Game_Func();
     }
 
 
