@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Win_Game : MonoBehaviour
 {
-    public GameObject win;
     public void Win_Game_Func()
     {
-        win.SetActive(true);
         StartCoroutine(Lecture());
 
     }
@@ -16,8 +14,8 @@ public class Win_Game : MonoBehaviour
     private IEnumerator Lecture()
     {
 
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene(0);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(1);
 
     }
 }

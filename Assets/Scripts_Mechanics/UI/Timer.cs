@@ -10,7 +10,6 @@ public class Timer : MonoBehaviour
     public int Seconds;
     public int Maxseconds = 60;
     public bool count = true;
-    public TextMeshProUGUI textScore;
     public TextMeshProUGUI textseconds;
     public static float score;
     public GameObject spawn1;

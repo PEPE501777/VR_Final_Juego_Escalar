@@ -46,7 +46,7 @@ public class Objetct_Pooling : MonoBehaviour
         {
             if (!cubes[i].activeSelf)
             {
-                cubes[i].transform.position = new Vector3(Random.Range(-7f, 7f), 5f, Random.Range(-7f, 7f));
+                cubes[i].transform.position = new Vector3(Random.Range(0f, 18f), transform.position.y, Random.Range(-16f, 4f));
                 cubes[i].SetActive(true);
                 returnIn[i] = Time.time + 6f;
                 return;

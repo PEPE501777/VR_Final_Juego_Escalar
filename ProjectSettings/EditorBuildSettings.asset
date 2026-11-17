@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_1.unity
     guid: 817cfe08b4675e74e8ad3edddede50b2
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 0363e4264d271c14a927adecaccaa722
+  - enabled: 1
+    path: Assets/Scenes/Lose.unity
+    guid: 024cf6658e9335e4c9332a9e91811636
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: fb155dfa70f964044ab8fed910b195df, type: 2}
