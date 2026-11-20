@@ -8,26 +8,44 @@ public class Object_Found : MonoBehaviour
     public bool correcto = false;
     public Object_Identifier reference;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        reference = other.GetComponent<Object_Identifier>();
-        if (reference != null)
-        {
-            activo = true;
-        }
+        TrySetReference(other);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        if (reference != null && activo == true)
-        {
-            if (reference.id == buscador)
-            {
-                correcto = true;
-            }
-            
-        }
-            
+        // Stay also covers objects that were already overlapping when this
+        // component became enabled or when the physics scene started.
+        TrySetReference(other);
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Object_Identifier exitingObject = other.GetComponentInParent<Object_Identifier>();
+        if (exitingObject != null && exitingObject == reference)
+            ClearReference();
+    }
+
+    private void TrySetReference(Collider other)
+    {
+        // Interactable objects often have child colliders, while their
+        // identifier lives on the root object.
+        Object_Identifier foundObject = other.GetComponentInParent<Object_Identifier>();
+        if (foundObject == null)
+            return;
+
+        reference = foundObject;
+        activo = true;
+        id_correcto = foundObject.id == buscador;
+        correcto = id_correcto;
+    }
+
+    private void ClearReference()
+    {
+        reference = null;
+        activo = false;
+        id_correcto = false;
+        correcto = false;
     }
 }
